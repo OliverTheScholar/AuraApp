@@ -19,11 +19,17 @@
   git clone --recurse-submodules https://github.com/OliverTheScholar/AuraApp.git
   ```
 
-  ### 3. Build Images and Run the App
+  ### 3. Initialize Environment Variables
+  Create an .env file in the root directory and add the mongo URI.
+  ```sh
+  MONGO_URI=<YOUR_MONGO_URI>
+  ```
+
+  ### 4. Build Images and Run the App
   ```sh
   docker-compose up --build
   ```
 
-  ### 4. Access
+  ### 5. Access The App
   After the containers are up and running, visit the application at [http://localhost:3000](http://localhost:3000)
 
