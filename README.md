@@ -1,24 +1,29 @@
+## Setup Instructions
 
+### 1. Seed the Database
 
-1. Seed DB
+- **Create a MongoAtlas Account:** Sign up for an account at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
+  
+- **Install MongoDB Tools:** Ensure you have the MongoDB command line tools installed on your machine. You can find the installation guide on the [MongoDB Manual](https://docs.mongodb.com/manual/administration/install-community/).
 
-Create a MongoAtlas account.
+- **Download the Seed File:** Download the necessary JSON file for seeding the database. [Download Here](https://drive.google.com/file/d/1ESL2hL5z31ZaB3lgjVMFdw94jn-qPbMh/view).
 
-Install mongo tools on your machine
+- **Seed the Database:** Use the `mongoimport` tool to seed your database with the contents of the file. Replace `<USERNAME>`, `<PASSWORD>`, `<DATABASE_NAME>`, and `<PATH_TO_JSON_FILE>` with your actual details.
 
-Download this file[link_to_file].
+  ```sh
+  mongoimport --uri mongodb+srv://<USERNAME>:<PASSWORD>@cluster0.rinullf.mongodb.net/<DATABASE_NAME> --collection patients --type json --file <PATH_TO_JSON_FILE>
+  ```
 
-Seed the database with the contents of the file.
+  ### 2. Clone the Repository Including Its Submodules
+  ```sh
+  git clone --recurse-submodules https://github.com/OliverTheScholar/AuraApp.git
+  ```
 
-mongoimport --uri mongodb+srv://<USERNAME>:<PASSWORD>@cluster0.rinullf.mongodb.net/<DATABASE_NAME> --collection patients --type json --file <PATH_TO_JSON_FILE>
+  ### 3. Build Images and Run the App
+  ```sh
+  docker-compose up --build
+  ```
 
-
-2. Clone this repo.
-
-3. Execute docker compose command to build images and run app.
-
-4. Visit http://localhost:3000
-
-
-
+  ### 4. Access
+  After the containers are up and running, visit the application at [http://localhost:3000](http://localhost:3000)
 
