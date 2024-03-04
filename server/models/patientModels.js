@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
-var MONGO_URI = 'mongodb+srv://dbUser:oNdjy5efekWFw7Ri@cluster0.rinullf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+require('dotenv').config(); 
+var MONGO_URI = process.env.MONGO_URI;
 mongoose.connect(MONGO_URI, {
-    // sets the name of the DB that our collections are part of
     dbName: 'AuraDB'
 })
     .then(function () { return console.log('Connected to Mongo DB.'); })
@@ -11,8 +11,8 @@ mongoose.connect(MONGO_URI, {
 var MedicationSchema = new mongoose.Schema({
     name: String,
     dosage: String,
-    start_date: { type: Date, default: null }, // Optional, as not all medications have start and end dates
-    end_date: { type: Date, default: null } // Optional
+    start_date: { type: Date, default: null }, 
+    end_date: { type: Date, default: null } 
 });
 var BodyTemperatureSchema = new mongoose.Schema({
     date: Date,

@@ -7,13 +7,13 @@ const router = express.Router();
 router.get('/home', async (req, res) => {
   // get patient list from mongo excluding meds + body temps
   Patient.find().select('-medications -body_temperatures').exec()
-  .then(patients => { // Corrected this line
+  .then(patients => {
       console.log(patients);
       res.status(200).send(patients);
   })
   .catch(err => {
     console.log(err);
-    res.status(500).send(err.message); // It's good practice to send back an error message
+    res.status(500).send(err.message); 
   });
 });
 
