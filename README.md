@@ -14,22 +14,22 @@
   mongoimport --uri mongodb+srv://<USERNAME>:<PASSWORD>@cluster0.rinullf.mongodb.net/<DATABASE_NAME> --collection patients --type json --file <PATH_TO_JSON_FILE>
   ```
 
-  ### 2. Clone the Repository Including Its Submodules
-  ```sh
-  git clone --recurse-submodules https://github.com/OliverTheScholar/AuraApp.git
-  ```
+### 2. Clone the Repository Including Its Submodules
+```sh
+git clone --recurse-submodules https://github.com/OliverTheScholar/AuraApp.git
+```
 
-  ### 3. Initialize Environment Variables
-  Create an .env file in the root directory and add the mongo URI.
-  ```sh
-  MONGO_URI=<YOUR_MONGO_URI>
-  ```
+### 3. Initialize Environment Variables
+Create an .env file in the root directory and add the mongo URI.
+```sh
+MONGO_URI=<YOUR_MONGO_URI>
+```
 
-  ### 4. Build Images and Run the App
-  ```sh
-  docker-compose up --build
-  ```
+### 4. Build Images and Run the App
+```sh
+docker-compose up --build
+```
 
-  ### 5. Access The App
-  After the containers are up and running, visit the application at [http://localhost:3000](http://localhost:3000)
+### 5. Access The App
+After the containers are up and running, visit the application at [http://localhost:3000](http://localhost:3000)
 
